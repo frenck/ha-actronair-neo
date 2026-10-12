@@ -8,14 +8,13 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   auto-merge:
     name: Auto-merge
     if: github.event.pull_request.user.login == 'dependabot[bot]'
-    uses: tinkerologie/.github/.github/workflows/dependabot-auto-merge.yml@d955e537e808a46f060026fe848026667ecc8b41 # v1.5.0
+    uses: tinkerologie/.github/.github/workflows/dependabot-auto-merge.yml@76e6d83c0207e8a22e28fdc64045045ba6addc3a # v1.5.3
     permissions:
       contents: write # merge the pull request
       pull-requests: write # merge the pull request
